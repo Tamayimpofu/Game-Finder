@@ -1,0 +1,148 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary: #151515;
+    --primary-light: #282828;
+    --text: #fff;
+    --text-secondary: #131313;
+    --transition: all 3s ease;
+    --result-good: #2ECC71;
+    --transition: all 0.3s ease;
+}
+
+body{
+    font-family: sans-serif;
+    color: var(--text);
+    background-color: var(--primary);
+}
+
+.container{
+    padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+/*-------Header-----*/
+/*-----------------*/
+header{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+header h1{
+    margin-bottom: 1.2rem;
+    font-size: 2.2rem;  
+}
+
+/*-------Search Container-----*/
+/*---------------------------*/
+.searchContainer{
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 10px;
+    margin-bottom: 2.5rem;
+}
+
+.searchContainer input{
+    flex: 1;
+    font-size: 1rem;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 12px;
+    outline: none;
+}
+
+.searchContainer button{
+    font-size: 1.1rem;
+    padding: 0 12px;
+    border-radius: 12px;
+    border: none;
+    background-color: #fff;
+    cursor: pointer;
+
+} 
+
+.searchContainer button:hover{
+    background-color: rgb(236, 237, 237);
+}
+
+.searchContainer i{
+    margin-right: 10px;
+}
+
+/*-------Game Container-----*/
+/*-------------------------*/
+.gameContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.game{
+    background-color: var(--primary-light);
+    border-radius: 20px;
+    overflow: hidden; 
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.game:hover{
+
+    transform: translateY(-6px);
+}
+
+.game img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.game img:hover{
+    filter: brightness(1.2);
+}
+
+/*-------Game Info-----*/
+.gameInfo{
+    padding: 10px;
+}
+
+.gameInfo h3{
+    font-size: 1.2rem;
+}
+
+.gameMeta{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    
+    
+}
+
+.rating{
+    display: inline-block;
+    font-size: 14px;
+    color: var(--result-good);
+    border: 1px solid var(--result-good);
+    padding: 4px 6px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+
+.icons{
+    display: flex;
+    font-size: 17px;
+    margin-top: 6px;
+    gap: 5px;
+}
+
+
+
