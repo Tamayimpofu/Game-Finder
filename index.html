@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="container">
+
+    <div class="mainContainer">
 
         <header>
             <h1>Game Finder</h1>
@@ -48,20 +49,26 @@
 
 
 
+    </div>
+
+
+    <div class="detailContainer">
 
         <div class="gameDetailsContainer" id="game_details_container">
 
-           <!---<div class="gameDetailContent">
+            
+
+            <!--<div class="gameDetailContent">
+                <button class="backToMenu" id="back_to_menu"><i class="fa-solid fa-arrow-left"></i> Go back</button>
                 <h1>Red Dead Redemption 2</h1>
 
                 <div class="imageCarousel">
-                    <img class="mainImage" id="main_Image"src="https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg">
+                    <img class="mainImage" id="main_Image" src="https://media.rawg.io/media/screenshots/7b8/7b8895a23e8ca0dbd9e1ba24696579d9.jpg">
 
-                    <div class="slides" id="img_slides">
+                    <div class="slides">
                         <button id="previous"><i class="fa-solid fa-caret-left"></i></button>
                         <div class="imgSlides">
-                            <img src="https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg" class="active">
-                            <img src="https://media.rawg.io/media/screenshots/7b8/7b8895a23e8ca0dbd9e1ba24696579d9.jpg">
+                            <img src="https://media.rawg.io/media/screenshots/7b8/7b8895a23e8ca0dbd9e1ba24696579d9.jpg" class="active">
                             <img src="https://media.rawg.io/media/screenshots/b8c/b8cee381079d58b981594ede46a3d6ca.jpg">
                             <img src="https://media.rawg.io/media/screenshots/fd6/fd6e41d4c30c098158568aef32dfed35.jpg">
                             <img src="https://media.rawg.io/media/screenshots/2ed/2ed3b2791b3bbed6b98bf362694aeb73.jpg">
@@ -81,7 +88,7 @@
                     </p>
                 </div>
 
-                <div class="gameInfo">
+                <div class="gameDetailsInfo">
                     <div class="gameDiscriptiveDetails">
                         <div class="Details">
                             <h3>Platforms</h3>
@@ -105,7 +112,7 @@
 
                         <div class="Details">
                             <h3>Website</h3>
-                            <a href="https://www.rockstargames.com/reddeadredemption2/" target="_blank" class="youtube-link">
+                            <a href="https://www.rockstargames.com/reddeadredemption2/" target="_blank" >
                                 https://www.rockstargames.com/reddeadredemption2/
                             </a>
                         </div>
@@ -132,8 +139,99 @@
 
                 </div>
  
-            </div>-->
+            </div>
 
+
+
+            <div class="gameStoreContent" >
+
+
+                <div class="storeImageWrapper">
+                    <img class="storeImage" id="store_Image" src="https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg" alt="Game Cover">
+                </div>
+        
+
+                <h2>where to buy</h2>
+
+                <div class="storeList">
+
+                    <a href="https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/" target="_blank" class="storeItem">
+                        <div class="storeInfo">
+                            <div class="storeIcon steam">
+                                <i class="fab fa-steam"></i>
+                            </div>
+                            <div class="storeDetails">
+                                <p class="storeName">Steam</p>
+                                <div class="storeDesc">PC - Digital Download</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://store.playstation.com/en-us/product/UP1004-CUSA03041_00-PARENTPRODUCT000?aaaa" target="_blank"class="storeItem">
+                        <div class="storeInfo">
+                            <div class="storeIcon playstation">
+                                <i class="fab fa-playstation"></i>
+                            </div>
+                            <div class="storeDetails">
+                                <p class="storeName">PlayStation Store</p>
+                                <div class="storeDesc">PS4 & PS5 - Digital Download</div>
+           
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="https://www.microsoft.com/en-us/p/red-dead-redemption-2/bpswgqbw7r3g?cid=msft_web_chart" target="_blank" class="storeItem">
+                        <div class="storeInfo">
+                            <div class="storeIcon xbox">
+                                <i class="fab fa-xbox"></i>
+                            </div>
+                            <div class="storeDetails">
+                                <p class="storeName">Xbox Store</p>
+                                <div class="storeDesc">Xbox One & Series X|S - Digital</div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <div class="storeItem">
+                        <div class="storeInfo">
+                            <div class="storeIcon nintendo">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <div class="storeDetails">
+                                <p class="storeName">Nintendo eShop</p>
+                                <div class="storeDesc">Nintendo Switch - Digital Download</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="storeItem">
+                        <div class="storeInfo">
+                            <div class="storeIcon epic">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="storeDetails">
+                                <p class="storeName">Epic Games Store</p>
+                                <div class="storeDesc">PC - Digital Download</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="storeItem">
+                        <div class="storeInfo">
+                            <div class="storeIcon gog">
+                                <i class="fas fa-download"></i>
+                            </div>
+                            <div class="storeDetails">
+                                <p class="storeName">GOG.com</p>
+                                <div class="storeDesc">PC - DRM-Free Digital Download</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>-->                     
 
         </div>
 

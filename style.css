@@ -9,8 +9,12 @@
     --primary-light: #282828;
     --text: #fff;
     --text-secondary: #131313;
+    --text-other: rgba(255, 255, 255, 0.4);
     --transition: all 3s ease;
     --result-good: #2ECC71;
+    --result-average: #E1B12C;
+    --result-bad: #D64541;
+    --result-NA: rgb(148, 148, 148);
     --transition: all 0.3s ease;
 }
 
@@ -18,14 +22,22 @@ body{
     font-family: sans-serif;
     color: var(--text);
     background-color: var(--primary);
+    width: 100%;
+    max-width: 100vw;
 }
 
-.container{
+.mainContainer{
     padding: 2rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
-    
+}
+
+.detailContainer{
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 /*-------Header-----*/
@@ -48,6 +60,7 @@ header h1{
     margin: 0 auto;
     gap: 10px;
     margin-bottom: 2.5rem;
+    width: 100%;
 }
 
 .searchContainer input{
@@ -57,6 +70,7 @@ header h1{
     border: none;
     border-radius: 12px;
     outline: none;
+    min-width: 0;
 }
 
 .searchContainer button{
@@ -83,6 +97,8 @@ header h1{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1.5rem;
+    width: 100%;
+    max-width: 100%;
 }
 
 .game{
@@ -91,6 +107,8 @@ header h1{
     overflow: hidden; 
     transition: var(--transition);
     cursor: pointer;
+    width: 100%;
+    max-width: 100%;
 }
 
 .game:hover{
@@ -122,20 +140,36 @@ header h1{
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
-    
-    
 }
 
 .rating{
     display: inline-block;
     font-size: 14px;
-    color: var(--result-good);
-    border: 1px solid var(--result-good);
     padding: 4px 6px;
     border-radius: 5px;
     font-weight: 600;
 }
 
+.rating.good{
+    color: var(--result-good);
+    border: 1px solid var(--result-good);
+}
+
+.rating.average{
+    color: var(--result-average);
+    border: 1px solid var(--result-average);
+}
+
+.rating.bad{
+    color: var(--result-bad);
+    border: 1px solid var(--result-bad);
+}
+
+.rating.NA{
+    color: var(--result-NA);
+    border: 1px solid var(--result-NA);
+    
+}
 
 .icons{
     display: flex;
@@ -144,5 +178,529 @@ header h1{
     gap: 5px;
 }
 
+/*-----Game Detail Container-----*/
+/*------------------------------*/
+.gameDetailsContainer{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 100%;
+    max-width: 100%;
+}
 
+.backToMenu{
+    background: #6123dd;
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    align-self: flex-start;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.backToMenu i{
+    margin-right: 8px;
+}
+
+.backToMenu:hover{
+    transform: translateX(5px);
+    background: #835cd1;
+
+}
+
+.gameDetailContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+}
+
+.gameDetailContent h1{
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
+    text-align: center; 
+}
+
+.imageCarousel{
+    width: 100%;
+    max-width: 1000px; 
+    margin-bottom: 2rem;  
+}
+
+.mainImage{
+
+    width: 100%;
+    border-radius: 8px;
+}
+
+.slides{
+    display: flex;
+    gap: 10px;
+    padding: 1rem;
+}
+
+.slides button{
+    flex-shrink: 0;
+    border-radius: 3.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-top: 12px;
+    background-color: var(--primary-light);
+    border: none;
+    color: #fff;
+    opacity: 0.5;
+    font-size: 1.5rem;
+    
+}
+
+.slides button:hover{
+    opacity: 1;
+}
+
+
+.imgSlides{
+    display: flex;
+    gap: 10px;
+    border-radius: 6px;
+    overflow-x: hidden;
+    flex: 1;
+    min-width: 0;
+}
+
+.imgSlides img{
+    width: 150px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 6px;
+    opacity: 0.6;
+    flex-shrink: 0;
+}
+
+.imgSlides img:hover{
+    opacity: 1;
+}
+
+.imgSlides img.active{
+    display: inline-block;
+    opacity: 1;
+    border: 2px solid #fff;
+}
+
+.discription{
+    width: 100%;
+    max-width: 800px;
+}
+.discription h2{
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.discription p{
+    line-height: 1.6;
+    font-size: 17px;
+    color: var(--text-other);
+    margin-bottom: 2rem;
+}
+
+/*-----Game Info ------*/
+.gameDetailsInfo{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    border-radius: 8px ;
+    width: 100%;
+    max-width: 800px;
+    column-gap: 8rem;
+    
+    
+}
+
+.gameDiscriptiveDetails{
+    margin-right: 0rem;
+}
+
+.gameFactualDetails{
+    margin-left: 0rem;
+}
+
+.Details h3{
+    margin-bottom: 4px;
+}
+
+.Details p{
+    margin-bottom: 10px;
+    color: var(--text-other);
+    font-size: 17px;
+}
+
+.Details a{
+    color: var(--text);
+    opacity: 0.5;
+    transition: var(--transition);
+    word-break: break-all;
+}
+
+.Details a:hover{
+    opacity: 0.7;
+}
+
+/*--game store content----*/
+/*-----------------------*/
+.gameStoreContent {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 16px;
+}
+
+.storeImageWrapper {
+    padding: 2rem;
+    margin-top: 11rem;
+}
+
+.storeImage {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    transform: var(--transition);
+}
+
+.storeImage:hover{
+    filter: brightness(1.1);
+}
+
+
+.gameStoreContent h2 {
+    opacity: 0.7;
+    text-align: center;
+    font-size: 28px;
+    text-transform: uppercase;
+    
+}
+
+.storeList {
+    padding: 20px 40px 40px;
+    display: grid;
+    gap: 16px;
+}
+
+.storeItem {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--primary-light);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    text-decoration: none;
+}
+
+.storeItem:hover {
+    transform: translateX(8px);
+    border-color: #1818c5;
+}
+
+.storeInfo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+    min-width: 0;
+}
+
+.storeIcon {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+    color: white;
+}
+
+.steam { background: linear-gradient(135deg, #1b2838 0%, #2a475e 100%); }
+.playstation-store { background: linear-gradient(135deg, #003087 0%, #0070cc 100%); }
+.xbox-store { background: linear-gradient(135deg, #107c10 0%, #16a615 100%); }
+.epic-games { background: linear-gradient(135deg, #313131 0%, #4a4a4a 100%); }
+.gog { background: linear-gradient(135deg, #86328a 0%, #a749ac 100%); }
+.nintendo { background: linear-gradient(135deg, #e60012 0%, #ff4040 100%); }
+
+.storeDetails {
+    flex: 1;
+    min-width: 0;
+}
+
+.storeName {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    margin: 0;
+    color: white;
+    opacity: 0.7;
+}
+
+.storeDesc {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+/*-------Media Queries-----*/
+/*------------------------*/
+
+/* Large tablets and small desktops */
+@media (max-width: 1024px) {
+    .gameDetailsContainer {
+        grid-template-columns: 1fr;
+    }
+    
+    .gameFactualDetails {
+        margin-left: 0;
+    }
+    
+    .gameDetailsInfo {
+        grid-template-columns: 1fr;
+    }
+
+    .storeImageWrapper {
+        margin-top: 0;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .mainContainer {
+        padding: 1.5rem;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .gameContainer {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+    
+    .game img {
+        height: 150px;
+    }
+    
+    .gameDetailContent h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .imageCarousel {
+        max-width: 100%;
+    }
+    
+    .imgSlides img {
+        width: 120px;
+        height: 65px;
+    }
+    
+    .slides button {
+        width: 3rem;
+        height: 3rem;
+        font-size: 1.2rem;
+    }
+    
+    .discription h2 {
+        font-size: 1.2rem;
+    }
+    
+    .discription p {
+        font-size: 16px;
+    }
+    
+    .gameStoreContent {
+        margin-top: 4rem;
+    }
+    
+    .gameStoreContent h2 {
+        font-size: 24px;
+    }
+
+    .storeImageWrapper {
+        margin-top: 0;
+    }
+    
+    .storeList {
+        padding: 20px;
+    }
+    
+    .storeIcon {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+    
+    .storeName {
+        font-size: 18px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    .mainContainer {
+        padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .searchContainer {
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+    }
+    
+    .searchContainer button {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .gameContainer {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .game img {
+        height: 200px;
+    }
+    
+    .gameDetailContent {
+        padding: 1rem;
+    }
+    
+    .gameDetailContent h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .slides {
+        padding: 0.5rem;
+        gap: 5px;
+    }
+    
+    .slides button {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
+        margin-top: 8px;
+    }
+    
+    .imgSlides {
+        gap: 5px;
+    }
+    
+    .imgSlides img {
+        width: 90px;
+        height: 50px;
+    }
+    
+    .discription h2 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .discription p {
+        font-size: 15px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .gameDetailsInfo {
+        gap: 16px;
+    }
+    
+    .Details h3 {
+        font-size: 1rem;
+    }
+    
+    .Details p {
+        font-size: 15px;
+    }
+    
+    .gameStoreContent {
+        margin-top: 3rem;
+    }
+    
+    .gameStoreContent h2 {
+        font-size: 20px;
+    }
+    
+    .storeImageWrapper {
+        padding: 1rem;
+        margin-top: 0;
+    }
+    
+    .storeList {
+        padding: 15px;
+        gap: 12px;
+    }
+    
+    .storeItem {
+        padding: 15px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .storeItem:hover {
+        transform: translateY(-4px);
+        transform: translateX(0);
+    }
+    
+    .storeInfo {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .storeIcon {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+    }
+    
+    .storeName {
+        font-size: 16px;
+    }
+    
+    .storeDesc {
+        font-size: 13px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .gameDetailContent h1 {
+        font-size: 1.5rem;
+    }
+    
+    .imgSlides img {
+        width: 75px;
+        height: 45px;
+    }
+    
+    .slides button {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.9rem;
+    }
+
+    .storeImageWrapper {
+        margin-top: 0;
+    }
+}
 
